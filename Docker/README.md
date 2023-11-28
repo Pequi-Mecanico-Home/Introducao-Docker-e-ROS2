@@ -88,7 +88,7 @@ Por padrão, é buildado o arquivo com nome DockerFile caso selecione o próprio
 Caso queira espeficar a tag da imagem (por padrão latest), basta utilizar  a flag -t:
 
 ```
-docker build -t {nome_da_imagem_a_ser_buildada}:{tag} {nome_DockerFile}
+docker build {nome_DockerFile} -t {nome_da_imagem_a_ser_buildada}:{tag}
 ```
 
 ### Executar um container
