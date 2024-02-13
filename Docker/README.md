@@ -32,7 +32,7 @@ scp arquivo.txt usuario@servidor:/caminho/para/o/destino
 ```
 ### Secure Shell
 
- É um rotocolo de rede seguro que permite a comunicação segura e remota com outros dispositivos em uma rede, ou seja, acessar outra máquina.
+ É um protocolo de rede seguro que permite a comunicação segura e remota com outros dispositivos em uma rede, ou seja, acessar outra máquina.
 
 ```
 ssh usuario@endereco_do_servidor
@@ -114,7 +114,7 @@ docker ps -a
 ```
 docker exec -it {id_do_container} bash
 ```
-Neste exemplo, **bash** é o shell que será executado no contêiner. **-it** é a flag (interactive terminal) usada para indicar que você deseja interagir com o terminal interativo do contêiner
+Neste exemplo, **bash** é o shell que será executado no contêiner. **-it** é a flag usada para indicar que você deseja interagir com o terminal interativo do contêiner
 
 ### Iniciar um container parado
 
@@ -232,7 +232,22 @@ docker run --gpus all imagem
 ### runtime
 Definir o tempo de execução (runtime) para um container específico.
 
+
 ```
 docker run --runtime=<nome> imagem
 
 ```
+
+
+
+## GUI
+Para obter acesso a uma interface gráfica dentro de seu container, faça com que a partir de uma imagem Docker definindo a variável de ambiente DISPLAY com ```-e DISPLAY=$DISPLAY``` e o volume com ```-v /tmp/.X11-unix:/tmp/.X11-unix```. 
+
+```
+docker run -v /tmp/.X11-unix:/tmp/.X11-unix:rw --gpus all -e DISPLAY=$DISPLAY -it {nome_da_imagem}
+
+```
+
+Também certifique-se de que os clientes X possam ser conectados de qualquer host, incluindo nosso contêiner Docker, executando ```xhost +```.
+
+[O que é x11?](https://www.baeldung.com/linux/x11).
