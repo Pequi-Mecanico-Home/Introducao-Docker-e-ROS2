@@ -171,3 +171,5 @@ def main(args=None):
 ## Conclusão
 
 Agora que você conhece os principais conceito do ROS, a maior dica que podemos dar é partir para a prática, sinta-se a vontade para adicionar suas conclusões neste repositório e contribuir o seu desevolvimento.
+
+[ROS2 Tutorials](https://www.youtube.com/playlist?list=PLLSegLrePWgJudpPUof4-nVFHGkB62Izy)
